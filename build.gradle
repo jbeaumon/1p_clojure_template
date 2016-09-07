@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        maven { 
+            url 'http://clojars.org/repo'
+        }
+        maven {
+            url "http://repo.oneplatform.build/nexus/content/groups/public/"
+        }
+        maven {
+            url "http://repo.oneplatform.build/nexus/content/groups/private/"
+        }
+    }
+    dependencies {
+        classpath 'clojuresque:clojuresque-base:1.7.0'
+    }
+}
+
+apply plugin: 'clojure-min'
+
+group = 'example.group'
+version = '1.0.0'
+
+clojure {
+        warnOnReflection = true
+            aotCompile = true
+}
+
+repositories {
+        mavenCentral()
+        clojarsRepo()
+}
+
+dependencies {
+        compile 'org.clojure:clojure:1.5.1'
+        compile "clojuresque:clojuresque:1.7.0"
+}
