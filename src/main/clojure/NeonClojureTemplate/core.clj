@@ -1,4 +1,4 @@
-(ns 1p_clojure_template.core
+(ns NeonClojureTemplate.core
   (:gen-class))
 
 (def l (list 1 2 3 4 5))
