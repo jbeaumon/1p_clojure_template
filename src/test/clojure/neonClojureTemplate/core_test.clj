@@ -1,7 +1,7 @@
-(ns clojuretemplate.core-test
+(ns neonClojureTemplate.core_test
   (:gen-class)
   (use clojure.test)
-  (use clojuretemplate.core))
+  (use neonClojureTemplate.core))
 
 (deftest pairs-of-values
   (let  [args  ["--server" "localhost"

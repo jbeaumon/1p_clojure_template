@@ -1,4 +1,4 @@
-(ns NeonClojureTemplate.core
+(ns neonClojureTemplate.core
   (:gen-class))
 
 (def l (list 1 2 3 4 5))

@@ -1,35 +1,30 @@
 buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
+    repositories { 
+        maven { url "http://clojars.org/repo" } 
         maven {
             url "http://repo.oneplatform.build/nexus/content/groups/public/"
         }
         maven {
             url "http://repo.oneplatform.build/nexus/content/groups/private/"
         }
+        mavenCentral()
     }
     dependencies {
-        classpath "gradle.plugin.de.kotka.clojuresque:clojuresque:2.0.0"
+        classpath "clojuresque:clojuresque:1.7.0" 
+        classpath 'clojuresque:clojuresque-base:1.7.0'
+//        classpath 'clojuresque:runtime:1.7.0'
     }
 }
 
-//apply plugin: "de.kotka.clojuresque.clojure"
-apply plugin: "clojure"
-
-clojure {
-        warnOnReflection = true
-            aotCompile = true
-}
+apply plugin: 'clojure'
+clojure.aotCompile = true
 
 repositories {
-        clojureReleasesRepo()
-        clojarsRepo()
-        mavenCentral()
+    mavenCentral()
+    flatDir dirs: project.file("lib/runtime")
+    maven { url "http://clojars.org/repo" }
 }
 
 dependencies {
-        compile 'org.clojure:clojure:1.5.1'
-        compile "clojuresque:clojuresque:2.0.0"
+        compile "org.clojure:clojure:1.6.0"
 }
