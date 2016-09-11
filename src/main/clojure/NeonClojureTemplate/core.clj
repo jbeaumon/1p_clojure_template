@@ -1,5 +1,10 @@
 (ns neonClojureTemplate.core
+  (import 
+    com.thomsonreuters.client.profile.impl.ProfileServiceClientImpl) 
   (:gen-class))
+
+(def profileClient (ProfileServiceClientImpl.))
+
 
 (def l (list 1 2 3 4 5))
 
